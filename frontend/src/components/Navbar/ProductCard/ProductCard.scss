@@ -1,0 +1,37 @@
+@import "../../../variable.scss";
+
+.card-container {
+  position: relative;
+  display: flex;
+  border: 1px solid $fontColor;
+  box-shadow: 1px 1px 1px 1px $fontColor;
+  border-radius: 5%;
+  width: 20vw;
+  background-color: $backgroundColor;
+  padding: 1vw;
+}
+.card-more-info {
+  width: 20vw;
+}
+
+.card-title {
+  position: absolute;
+  left: -25%;
+  top: 0;
+  width: 3.5rem;
+  height: 100%;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+  color: $fontColor;
+  font-weight: bold;
+}
+.card-description {
+  font-style: italic;
+}
+
+.card-image {
+  max-width: 100%;
+  height: auto;
+  padding: 3rem 0;
+}
