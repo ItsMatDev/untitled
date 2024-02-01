@@ -6,32 +6,50 @@
   border: 1px solid $fontColor;
   box-shadow: 1px 1px 1px 1px $fontColor;
   border-radius: 5%;
-  width: 20vw;
+  width: 20%;
+  max-height: 200px;
   background-color: $backgroundColor;
-  padding: 1vw;
+  padding: 3vw;
 }
 .card-more-info {
-  width: 20vw;
-}
+  width: 50vw;
+  font-size: 1.5rem;
+  margin-left: 2vw;
+  transition: width 0.5s;
+  display: none;
+  opacity: 0;
 
+  p {
+    margin: 0;
+  }
+  .card-description {
+    font-style: italic;
+    margin-block: 5vh;
+  }
+}
+.card-more-info-2 {
+  opacity: 1;
+  transition: opacity 5s;
+}
 .card-title {
   position: absolute;
-  left: -25%;
+  left: 5%;
   top: 0;
-  width: 3.5rem;
-  height: 100%;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
   text-align: center;
   color: $fontColor;
+  font-size: 2rem;
   font-weight: bold;
-}
-.card-description {
-  font-style: italic;
+  margin-left: 2vw;
+  border-bottom: 1px solid $fontColor;
 }
 
+.more-info-button {
+  position: absolute;
+  bottom: 5%;
+  right: 10%;
+}
 .card-image {
   max-width: 100%;
-  height: auto;
-  padding: 3rem 0;
+  max-height: 100%;
+  padding: 5vh 1vw;
 }

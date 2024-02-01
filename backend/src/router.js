@@ -19,5 +19,12 @@ router.get("/items/:id", itemControllers.read);
 router.post("/items", itemControllers.add);
 
 /* ************************************************************************* */
+const userControllers = require("./controllers/userControllers");
+
+router.post("/users/login", userControllers.login);
+
+const productControllers = require("./controllers/productControllers");
+
+router.get("/products", productControllers.browse);
 
 module.exports = router;

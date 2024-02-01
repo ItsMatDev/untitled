@@ -1,0 +1,30 @@
+@import "../variable.scss";
+
+.login-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  label {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 1px $fontColor;
+  }
+  input {
+    font-size: 1.2rem;
+    height: 2.5vh;
+    background-color: $backgroundColor;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px $fontColor;
+  }
+  button {
+    font-size: 1.2rem;
+    width: 8vw;
+    height: 3.5vh;
+    border-radius: 5px;
+    background-color: $fontColor;
+    color: $backgroundColor;
+  }
+}

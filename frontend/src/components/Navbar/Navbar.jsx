@@ -12,7 +12,9 @@ function Navbar() {
         <li>
           <Link to="/products">products</Link>
         </li>
-        <li>profile</li>
+        <li>
+          <Link to="/login">profile</Link>
+        </li>
       </ul>
     </nav>
   );
