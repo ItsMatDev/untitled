@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import arrow from "../assets/arrow.png";
 import "./Home.scss";
 
@@ -67,13 +68,18 @@ function Home() {
           src={sunglasses3}
           alt="product"
         />
-        <button
-          type="button"
-          className="button-slider"
-          onClick={handleSliderClick}
-        >
-          <img src={arrow} alt="button switch product" />
-        </button>
+        <footer>
+          <Link to="/" className="button-shop">
+            SHOP
+          </Link>
+          <button
+            type="button"
+            className="button-slider"
+            onClick={handleSliderClick}
+          >
+            <img src={arrow} alt="button switch product" />
+          </button>
+        </footer>
       </div>
       <p className="product-description">"{currentProduct.description}"</p>
     </article>

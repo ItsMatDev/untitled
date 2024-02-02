@@ -1,0 +1,179 @@
+@import "../../variable.scss";
+
+.delete-product-button {
+  position: absolute;
+  background-color: inherit;
+  font-size: 1rem;
+  bottom: 5%;
+  left: 5%;
+  color: red;
+  border-radius: 5px;
+  border: 1px solid $fontColor;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px $fontColor;
+  text-shadow: 1px 1px 1px $fontColor;
+  padding: 2vw 3vw;
+  z-index: 1;
+}
+
+.modify-button {
+  position: absolute;
+  font-size: 1rem;
+  background-color: inherit;
+  bottom: 5%;
+  left: 30%;
+  color: black;
+  border-radius: 5px;
+  border: 1px solid $fontColor;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px $fontColor;
+  text-shadow: 1px 1px 1px $fontColor;
+  padding: 2vw 3vw;
+  z-index: 1;
+}
+.card-modify-more-info {
+  position: relative;
+  font-size: 1.2rem;
+}
+.card-modify-title-label {
+  position: absolute;
+  font-weight: 500;
+  top: 5%;
+  left: 2%;
+  font-size: 1.2rem;
+  height: 2vh;
+}
+.card-modify-title-input {
+  position: absolute;
+  top: 18%;
+  left: 2%;
+  height: 2vh;
+  width: 35vw;
+  font-size: 1.2rem;
+  z-index: 1;
+}
+.card-modify-image-label {
+  position: absolute;
+  font-weight: 500;
+  top: 30%;
+  left: 2%;
+  height: 2vh;
+  font-size: 1.2rem;
+}
+.card-modify-image-input {
+  height: 7vh;
+  width: 40vw;
+  position: absolute;
+  top: 40%;
+  left: 2%;
+  font-size: 1.2rem;
+  z-index: 1;
+}
+
+.card-modify-description-label {
+  font-style: normal;
+  position: absolute;
+  top: -10%;
+  left: 100%;
+  font-size: 1.2rem;
+}
+
+.card-modify-description-input {
+  position: absolute;
+  top: 2%;
+  left: 100%;
+  height: 10.5vh;
+  width: 44vw;
+  font-size: 1.2rem;
+}
+.card-modify-price-label {
+  font-style: normal;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  font-size: 1.2rem;
+}
+.card-modify-price-input {
+  position: absolute;
+  top: 61%;
+  left: 100%;
+  width: 44vw;
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 600px) {
+  .modify-button {
+    font-size: 1.2rem;
+    padding: 1vw 3vw;
+  }
+  .delete-product-button {
+    font-size: 1.2rem;
+    padding: 1vw 3vw;
+  }
+
+  .card-modify-more-info {
+    position: relative;
+    font-size: 1.2rem;
+  }
+  .card-modify-title-label {
+    position: absolute;
+    top: 7%;
+    left: 2%;
+    font-size: 1.2rem;
+    height: 2vh;
+  }
+  .card-modify-title-input {
+    position: absolute;
+    top: 15%;
+    left: 2%;
+    height: 2vh;
+    width: 25vw;
+    font-size: 1.2rem;
+  }
+  .card-modify-image-label {
+    position: absolute;
+    top: 33%;
+    left: 2%;
+    height: 2vh;
+    font-size: 1.2rem;
+  }
+  .card-modify-image-input {
+    height: 7vh;
+    width: 25vw;
+    position: absolute;
+    top: 40%;
+    left: 2%;
+    font-size: 1.2rem;
+  }
+
+  .card-modify-description-label {
+    font-style: normal;
+    position: absolute;
+    top: -20%;
+    left: 80%;
+    font-size: 1.2rem;
+  }
+
+  .card-modify-description-input {
+    position: absolute;
+    top: -10%;
+    left: 80%;
+    height: 10.5vh;
+    width: 28vw;
+    font-size: 1.2rem;
+  }
+  .card-modify-price-label {
+    font-style: normal;
+    position: absolute;
+    top: 35%;
+    left: 80%;
+    font-size: 1.2rem;
+  }
+  .card-modify-price-input {
+    position: absolute;
+    top: 46%;
+    left: 80%;
+    width: 28vw;
+    font-size: 1.2rem;
+  }
+}

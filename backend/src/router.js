@@ -2,29 +2,17 @@ const express = require("express");
 
 const router = express.Router();
 
-/* ************************************************************************* */
-// Define Your API Routes Here
-/* ************************************************************************* */
-
-// Import itemControllers module for handling item-related operations
-const itemControllers = require("./controllers/itemControllers");
-
-// Route to get a list of items
-router.get("/items", itemControllers.browse);
-
-// Route to get a specific item by ID
-router.get("/items/:id", itemControllers.read);
-
-// Route to add a new item
-router.post("/items", itemControllers.add);
-
-/* ************************************************************************* */
 const userControllers = require("./controllers/userControllers");
+const { authorize } = require("./middlewares/auth");
 
 router.post("/users/login", userControllers.login);
+router.get("/users/me", authorize, userControllers.getCurrentUser);
 
 const productControllers = require("./controllers/productControllers");
 
 router.get("/products", productControllers.browse);
+router.post("/products", productControllers.add);
+router.put("/products/:id", productControllers.update);
+router.delete("/products/:id", productControllers.deleteOne);
 
 module.exports = router;

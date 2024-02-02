@@ -1,0 +1,141 @@
+@import "../../variable.scss";
+body {
+  overflow-y: scroll;
+}
+.card-container {
+  position: relative;
+  display: flex;
+  border: 1px solid $fontColor;
+  box-shadow: 1px 1px 1px 1px $fontColor;
+  border-radius: 5%;
+  width: 41%;
+  height: 13.5rem;
+  background-color: $backgroundColor;
+  padding: 3vw;
+  transition: width 0.4s;
+}
+
+.card-container-extended {
+  width: 91%;
+  height: 13.5rem;
+  transition: width 0.4s;
+}
+.card-title {
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  text-align: center;
+  color: $fontColor;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-left: 2vw;
+  border-bottom: 1px solid $fontColor;
+}
+
+.card-image {
+  width: 40vw;
+  max-height: 100%;
+  margin-top: 2vh;
+  padding: 5vh 1vw;
+  filter: drop-shadow(0.5px 0.5px 0.5px $fontColor);
+}
+
+.card-more-info {
+  position: relative;
+  right: 1%;
+  top: 8%;
+  font-size: 1.1rem;
+  font-weight: 500;
+  opacity: 0;
+  width: 0;
+  transition:
+    width 5s,
+    opacity 0.1s;
+  p {
+    margin: 0;
+  }
+  .card-price {
+    margin-top: 2vh;
+  }
+}
+.card-more-info-extended {
+  width: 200px;
+  position: absolute;
+  right: 1%;
+  font-style: italic;
+  opacity: 1;
+  transition: opacity 1s;
+}
+.more-info-button {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  z-index: 1;
+  color: inherit;
+  font-size: 1.4rem;
+  border: 1px solid $fontColor;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px $fontColor;
+  text-shadow: 1px 1px 1px $fontColor;
+  padding: 1vw 3vw;
+  background-color: inherit;
+}
+
+.button-shop-card {
+  position: absolute;
+  bottom: 5%;
+  left: 1rem;
+  padding: 1vw;
+  margin: 0;
+}
+
+@media screen and (min-width: 600px) {
+  .card-container {
+    width: 25%;
+    height: 15rem;
+  }
+
+  .card-image {
+    width: 20vw;
+    margin-top: -2vh;
+    padding: 5vh 0.5vw;
+    filter: drop-shadow(0.5px 0.5px 0.5px $fontColor);
+  }
+
+  .card-container-extended {
+    width: 58%;
+    transition: width 0.4s;
+  }
+
+  .card-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 2vw;
+    border-bottom: 1px solid $fontColor;
+  }
+  .card-more-info {
+    position: absolute;
+    margin-right: 1vw;
+    font-size: 2rem;
+    font-weight: 500;
+    opacity: 0;
+    width: 0;
+    transition:
+      width 5s,
+      opacity 0.1s;
+    p {
+      margin: 0;
+    }
+    .card-price {
+      margin-top: 4vh;
+    }
+  }
+  .card-more-info-extended {
+    width: 700px;
+    position: absolute;
+    right: 1%;
+    font-style: italic;
+    opacity: 1;
+    transition: opacity 1s;
+  }
+}

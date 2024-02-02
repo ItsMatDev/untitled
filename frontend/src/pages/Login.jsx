@@ -2,9 +2,11 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.scss";
 import login from "../services/auth";
+import useStore from "../store/AuthProvider";
 
 function Login() {
   const navigate = useNavigate();
+  const { setAuth } = useStore();
   const onSubmit = async (event) => {
     event.preventDefault();
 
@@ -13,6 +15,7 @@ function Login() {
       const password = event.target.password.value;
 
       const result = await login(email, password);
+      setAuth({ user: result });
       if (result.email) {
         navigate("/admin");
       }

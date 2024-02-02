@@ -1,7 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import PropTypes from "prop-types";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
+import useStore, { AuthProvider } from "./store/AuthProvider";
 
 import App from "./App";
 import Home from "./pages/Home";
@@ -38,20 +44,69 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <Login />,
+        element: (
+          <PublicRoute>
+            <Login />
+          </PublicRoute>
+        ),
       },
       {
         path: "/admin",
-        element: <Admin />,
+        element: (
+          <PrivateRoute>
+            <Admin />
+          </PrivateRoute>
+        ),
+        loader: async () => {
+          try {
+            const response = await fetch(
+              `${import.meta.env.VITE_BACKEND_URL}/api/products`
+            );
+            if (!response.ok) {
+              throw new Error("Failed to fetch data");
+            }
+            return response;
+          } catch (error) {
+            console.error(error);
+            return null;
+          }
+        },
       },
     ],
   },
 ]);
 
+function PrivateRoute({ children }) {
+  const { auth } = useStore();
+
+  if (auth.user.role === "user") {
+    return children;
+  }
+  return <Navigate to="/login" />;
+}
+
+function PublicRoute({ children }) {
+  const { auth } = useStore();
+  if (auth.user.role === "user") {
+    return <Navigate to="/admin" />;
+  }
+  return children;
+}
+
+PrivateRoute.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+PublicRoute.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>
 );

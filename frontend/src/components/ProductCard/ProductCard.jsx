@@ -1,11 +1,13 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./ProductCard.scss";
-import sunglasses1 from "../../../assets/products/sunglasses1.png";
-import sunglasses2 from "../../../assets/products/sunglasses2.png";
-import sunglasses3 from "../../../assets/products/sunglasses3.png";
-import sunglasses4 from "../../../assets/products/sunglasses4.png";
-import sunglasses5 from "../../../assets/products/sunglasses5.png";
+import sunglasses1 from "../../assets/products/sunglasses1.png";
+import sunglasses2 from "../../assets/products/sunglasses2.png";
+import sunglasses3 from "../../assets/products/sunglasses3.png";
+import sunglasses4 from "../../assets/products/sunglasses4.png";
+import sunglasses5 from "../../assets/products/sunglasses5.png";
+import sunglasses6 from "../../assets/products/sunglasses6.png";
 
 function ProductCard({ name, image, price, description }) {
   const [productClicked, setproductClicked] = useState(false);
@@ -22,32 +24,41 @@ function ProductCard({ name, image, price, description }) {
         return sunglasses4;
       case "sunglasses5":
         return sunglasses5;
-      // case "sunglasses6":
-      //   return sunglasses6;
+      case "sunglasses6":
+        return sunglasses6;
       default:
         return "";
     }
   };
 
   return (
-    <article className="card-container">
+    <article
+      className={`card-container ${
+        productClicked ? "card-container-extended" : ""
+      }`}
+    >
       <h2 className="card-title">{name}</h2>
       <div>
         <img className="card-image" src={getImageSource()} alt="" />
+        <Link to="/" className="button-shop button-shop-card">
+          SHOP
+        </Link>
         <button
           type="button"
           className="more-info-button"
           onClick={() => setproductClicked(!productClicked)}
         >
-          Click here
+          {productClicked ? "-" : "+"}
         </button>
       </div>
-      {/* {productClicked && ( */}
-      <div className="card-more-info">
+      <div
+        className={`card-more-info ${
+          productClicked ? "card-more-info-extended" : ""
+        }`}
+      >
         <p className="card-description">"{description}"</p>
-        <p>${price}</p>
+        <p className="card-price">${price}</p>
       </div>
-      {/* )} */}
     </article>
   );
 }
@@ -55,7 +66,7 @@ function ProductCard({ name, image, price, description }) {
 ProductCard.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
 };
 

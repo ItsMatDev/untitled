@@ -7,6 +7,7 @@ const login = async (email, password) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
+    credentials: "include",
   });
   if (!response.ok) {
     throw new Error(`Erreur de réseau : ${response.status}`);

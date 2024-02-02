@@ -1,0 +1,51 @@
+@import "../../variable.scss";
+.card-add-container {
+  position: relative;
+}
+.button-add-product {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: inherit;
+  color: black;
+  border-radius: 5px;
+  border: 1px solid $fontColor;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px $fontColor;
+  text-shadow: 1px 1px 1px $fontColor;
+  padding: 0vh 5vw;
+  font-size: 5rem;
+}
+.new-product-form {
+  input {
+    width: 9rem;
+  }
+  button {
+    font-size: 1rem;
+    margin-top: 1vh;
+    width: 15vw;
+    background-color: $fontColor;
+    color: $backgroundColor;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .new-product-form {
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    gap: 1px;
+    font-size: 1.2rem;
+    margin: -1vw;
+    button {
+      font-size: 1rem;
+      width: 5vw;
+      background-color: $fontColor;
+      color: $backgroundColor;
+    }
+  }
+  .add-description {
+    height: 5vh;
+  }
+}

@@ -1,50 +1,60 @@
 @import "../variable.scss";
 
 header {
-  margin-top: 10vh;
+  margin-top: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.product-title,
+.product-title {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 500;
+  text-shadow: 1px 1px 1px $fontColor;
+}
 .product-price {
   margin: 0;
-  margin-left: 10vw;
   font-size: 3.5rem;
-  font-weight: 600;
+  font-weight: 500;
+  text-shadow: 1px 1px 1px $fontColor;
 }
 .product-display-counter {
-  margin-top: -10vh;
-  margin-left: 82vw;
-  font-size: 1.8rem;
-  font-weight: 600;
+  margin-top: -55vh;
+  margin-left: 70vw;
+  font-size: 1.7rem;
+  text-shadow: 1px 1px 1px $fontColor;
+  font-weight: 500;
 }
 .center-background-image {
   background-image: url("../assets/background/bluesunny.jpg");
   background-size: cover;
   position: absolute;
-  left: 40%;
-  top: 20%;
-  width: 30vw;
-  height: 70vh;
-  border-radius: 45%;
-  border: 1px solid $fontColor;
+  left: 30%;
+  top: 25%;
+  width: 40vw;
+  height: 30vh;
+  border-radius: 100px;
+  border: 0.5px solid $fontColor;
   box-shadow: 1px 1px 1px 1px $fontColor;
   opacity: 90%;
   .product {
     position: absolute;
-    top: 20%;
-    left: -30%;
-    width: 50vw;
+    top: 30%;
+    left: -60%;
+    width: 90vw;
     opacity: 90%;
+    filter: drop-shadow(0.5px 0.5px 0.5px $fontColor);
   }
   .product2 {
     top: 20%;
-    width: 50vw;
-    left: 245%;
+    width: 90vw;
+    left: 320%;
   }
   .product3 {
-    width: 50vw;
+    width: 90vw;
     top: 15%;
-    left: 520%;
+    left: 680%;
   }
   .move {
     transform: translateX(0%);
@@ -59,16 +69,6 @@ header {
     transition: transform 0.3s ease;
   }
 }
-
-// .slider {
-//   position: absolute;
-//   top: -25%;
-//   left: 15%;
-//   background-color: inherit;
-//   .product-image {
-//     width: 70vw;
-//   }
-// }
 .center-background-image1 {
   background-image: url("../assets/background/bluesunny.jpg");
 }
@@ -78,23 +78,117 @@ header {
 .center-background-image3 {
   background-image: url("../assets/background/yellowblue.jpg");
 }
-
+.button-shop {
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+  font-size: 1.4rem;
+  border: 1px solid $fontColor;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px $fontColor;
+  text-shadow: 1px 1px 1px $fontColor;
+  padding: 1.5vw;
+  position: absolute;
+  background-color: inherit;
+  margin-left: -2vw;
+  margin-top: 55vh;
+  cursor: pointer;
+}
 .button-slider {
   border: none;
   position: relative;
   background-color: inherit;
-  margin-left: 41vw;
-  margin-top: 60vh;
+  margin-left: 25vw;
+  margin-top: 55vh;
+  filter: drop-shadow(1px 1px 1px $fontColor);
   cursor: pointer;
   img {
-    width: 5vw;
+    width: 10vw;
   }
 }
 .product-description {
-  position: absolute;
-  width: 30vw;
-  bottom: 5%;
-  left: 6%;
-  font-size: 2rem;
-  font-style: italic;
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  header {
+    display: block;
+    margin-top: 10vh;
+  }
+
+  .product-title,
+  .product-price {
+    margin: 0;
+    margin-left: 10vw;
+    font-size: 3.5rem;
+    font-weight: 600;
+  }
+  .product-display-counter {
+    margin-top: -10vh;
+    margin-left: 82vw;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  .center-background-image {
+    left: 40%;
+    top: 20%;
+    width: 20vw;
+    height: 70vh;
+    border-radius: 150px;
+    .product {
+      position: absolute;
+      top: 22%;
+      left: -70%;
+      width: 50vw;
+      opacity: 90%;
+    }
+    .product2 {
+      top: 20%;
+      width: 48vw;
+      left: 400%;
+    }
+    .product3 {
+      width: 48vw;
+      top: 13%;
+      left: 780%;
+    }
+    .move {
+      transform: translateX(0%);
+      transition: transform 0.3s ease;
+    }
+    .move1 {
+      transform: translateX(-200%);
+      transition: transform 0.3s ease;
+    }
+    .move2 {
+      transform: translateX(-350%);
+      transition: transform 0.3s ease;
+    }
+  }
+  .button-shop {
+    padding: 1vw;
+    margin-left: 30vw;
+    margin-top: 60vh;
+    img {
+      width: 10vw;
+    }
+  }
+
+  .button-slider {
+    margin-left: 42vw;
+    margin-top: 60vh;
+    img {
+      width: 4vw;
+    }
+  }
+  .product-description {
+    display: block;
+    position: absolute;
+    width: 31vw;
+    bottom: 4%;
+    left: 6%;
+    font-size: 2rem;
+    font-weight: 500;
+    font-style: italic;
+  }
 }
